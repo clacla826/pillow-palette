@@ -1,0 +1,19 @@
+// 1.Issue: main index.js didn't run when i simply 'npm start'
+//   solution: npm run start-dev by running both webpack -w and noder server
+
+
+//Questions
+What does .babelrc does and relation o webpack.config.js presets?
+
+
+//Take away 
+Setting up: make sure every components are connected by exports and inports
+Also, make sure your mind map is logially working together.
+App to Root to Component and than your redux is exporting and store is creating the state based on those hookups
+//Webpack config is very important. If it says module not found or can't resolve
+  Check your webpack config to see if you have:
+  resolve: {
+    extensions: ['.js', '.jsx']
+  },
+
+
