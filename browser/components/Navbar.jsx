@@ -38,7 +38,10 @@ class Navbar extends Component {
                 <NavLink to="/">START</NavLink>
               </li>
               <li>
-                <NavLink to="/">SIGN UP</NavLink>
+                <NavLink to="/">LOG IN</NavLink>
+              </li>
+              <li>
+                <NavLink to="/">CART</NavLink>
               </li>
             </ul>
           </div>

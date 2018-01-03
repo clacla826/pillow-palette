@@ -6,7 +6,7 @@
 What does .babelrc does and relation o webpack.config.js presets?
 
 
-//Take away 
+//Take away
 Setting up: make sure every components are connected by exports and inports
 Also, make sure your mind map is logially working together.
 App to Root to Component and than your redux is exporting and store is creating the state based on those hookups
@@ -17,3 +17,5 @@ App to Root to Component and than your redux is exporting and store is creating 
   },
 
 
+//I learn how to override bootstrap. Simply add another custom css rel in html
+//then on the css ,put your css code to override

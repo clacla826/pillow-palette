@@ -1118,10 +1118,25 @@ a{
 
 
 
+/*///////////////FOR REACT CSS/////////////*/
+.example-appear {
+  opacity: 0.01;
+}
+
+.example-appear.example-appear-active {
+  opacity: 1;
+  transition: opacity .5s ease-in;
+}
 
 
+.fade-appear {
+  opacity: 0.01;
+}
 
-
+.fade-appear.fade-appear-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
 
 
 
