@@ -14,9 +14,17 @@ const store = createStore(
 export default store;
 
 
-// import { combineReducers } from 'redux';
-// import users from './users';
-// import stories from './stories';
-// import currentUser from './auth';
 
-// export default combineReducers({ users, stories, currentUser });
+
+
+// import { createStore, applyMiddleware } from 'redux';
+// import loggerMiddleware from 'redux-logger';
+// import thunkMiddleware from 'redux-thunk';
+// import { composeWithDevTools } from 'redux-devtools-extension';
+
+// import rootReducer from './redux';
+
+// export default createStore(
+//   rootReducer,
+//   composeWithDevTools(applyMiddleware(thunkMiddleware, loggerMiddleware))
+// );

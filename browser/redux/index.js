@@ -1,5 +1,15 @@
+import { combineReducers } from 'redux';
+// import users from './users';
+// import stories from './stories';
+// import currentUser from './auth';
+
+export default combineReducers({  });
 
 
-export default function dummyReducer (state = {}, action) {
-  return state;
-}
+
+// import { combineReducers } from 'redux';
+// import users from './users';
+// import stories from './stories';
+// import currentUser from './auth';
+
+// export default combineReducers({ users, stories, currentUser });

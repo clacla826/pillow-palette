@@ -18,6 +18,7 @@ export default class Root extends Component {
 
           <Route exact path="/" component={Front} />
           <Route exact path="/step1" component={Step1} />
+          <Route exact path="/step2" component={Step2} />
         </div>
 
       </BrowserRouter>

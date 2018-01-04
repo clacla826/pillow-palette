@@ -57,7 +57,6 @@ body {
   font-size: 35px;
   margin: 4px 2px;
   margin-left: 12%;
-
 }
 
 
@@ -144,168 +143,6 @@ body {
   position: relative;
 }
 
-#checkmark1A, #checkmark3A {
-  position: absolute;
-  left:30%;
-  top:37%;
-  width: 40%;
-  margin: 0 auto;
-  padding-top: 40px;
-  font-family: 'Heebo', sans-serif;
-  color: black;
-  font-size: 20px;
-  font-weight: bold;
-  margin: 20px auto;
-  text-align: center;
-  animation: text .5s linear .4s;
-  -webkit-animation: text .4s linear .3s;
-}
-
-#checkmark1B {
-  position: absolute;
-  left:33%;
-  top:50%;
-  width: 40%;
-  margin: 0 auto;
-  padding-top: 40px;
-  font-family: 'Heebo', sans-serif;
-  color: black;
-  font-size: 18px;
-  font-weight: bold;
-  margin: 20px auto;
-  text-align: center;
-  animation: text .5s linear .4s;
-  -webkit-animation: text .4s linear .3s;
-}
-
-#checkmark1C {
-  position: absolute;
-  left:34%;
-  top:37%;
-  width: 37%;
-  margin: 0 auto;
-  padding-top: 40px;
-  font-family: 'Heebo', sans-serif;
-  color: black;
-  font-size: 20px;
-  font-weight: bold;
-  margin: 20px auto;
-  text-align: center;
-  animation: text .5s linear .4s;
-  -webkit-animation: text .4s linear .3s;
-}
-
-#checkmark2A {
-  position: absolute;
-  left:30%;
-  top:37%;
-  width: 40%;
-  margin: 0 auto;
-  padding-top: 40px;
-  font-family: 'Heebo', sans-serif;
-  color: black;
-  font-size: 20px;
-  font-weight: bold;
-  margin: 20px auto;
-  text-align: center;
-  animation: text .5s linear .4s;
-  -webkit-animation: text .4s linear .3s;
-}
-
-#checkmark2B {
-  position: absolute;
-  left:30%;
-  top:37%;
-  width: 40%;
-  margin: 0 auto;
-  padding-top: 40px;
-  font-family: 'Heebo', sans-serif;
-  color: black;
-  font-size: 20px;
-  font-weight: bold;
-  margin: 20px auto;
-  text-align: center;
-  animation: text .5s linear .4s;
-  -webkit-animation: text .4s linear .3s;
-}
-
-#checkmark2C {
-  position: absolute;
-  left:33%;
-  top:45%;
-  width: 36%;
-  margin: 0 auto;
-  padding-top: 40px;
-  font-family: 'Heebo', sans-serif;
-  color: black;
-  font-size: 20px;
-  font-weight: bold;
-  margin: 20px auto;
-  text-align: center;
-  animation: text .5s linear .4s;
-  -webkit-animation: text .4s linear .3s;
-}
-
-#checkmark3A, #checkmark3B, #checkmark3C{
-  position: absolute;
-  left:30%;
-  top:35%;
-  width: 40%;
-  margin: 0 auto;
-  padding-top: 40px;
-  font-family: 'Heebo', sans-serif;
-  color: black;
-  font-size: 20px;
-  font-weight: bold;
-  margin: 20px auto;
-  text-align: center;
-  animation: text .5s linear .4s;
-  -webkit-animation: text .4s linear .3s;
-}
-
-.path {
-  stroke-dasharray: 1000;
-  stroke-dashoffset: 0;
-  animation: dash 2s ease-in-out;
-  -webkit-animation: dash 2s ease-in-out;
-}
-
-
-@-webkit-keyframes dash {
- 0% {
-   stroke-dashoffset: 1000;
- }
- 100% {
-   stroke-dashoffset: 0;
- }
-}
-
-@keyframes dash {
- 0% {
-   stroke-dashoffset: 1000;
- }
- 100% {
-   stroke-dashoffset: 0;
- }
-}
-
-@-webkit-keyframes spin {
-  0% {
-    -webkit-transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-  }
-}
-
-@keyframes spin {
-  0% {
-    -webkit-transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-  }
-}
 
 /*////////////////////PICK YOUR FILLING////////////////////////*/
 .container-fluid4 {
@@ -1089,7 +926,8 @@ a{
 
 /*///////////////FOR REACT CSS/////////////*/
 
-
+/*///////////////STEP 1/////////////*/
+    /*/////////CSS TRANSFORMATION GROUP///////*/
 #parentImg {
   position: relative ;
 }
@@ -1118,4 +956,38 @@ a{
 .fade-leave.fade-leave-active {
   opacity: 0.01;
   transition: opacity 300ms ease-in;
+}
+
+
+    /*///////////////STEP 1/////////////*/
+.nextStepDiv {
+  text-align:center;
+  background-color:blue;
+  height:400px;
+  width:600px
+}
+
+.nextStep {
+  size: 60%;
+  margin-top:-100px;
+  margin-left: 450px;
+  font-family: 'Oswald', sans-serif;
+  color: black;
+  font-size: 20px;
+  text-align: center;
+  background-color: #F4F7F6;
+  border: none;
+  transition-duration: 0.4s;
+}
+
+.nextStep:hover{
+  size: 60%;
+  margin-top:-100px;
+  /* margin-left: 450px; */
+  font-family: 'Oswald', sans-serif;
+  color: black;
+  font-size: 20px;
+  text-align: center;
+  background-color: #b7ffe6;
+  border: none;
 }
