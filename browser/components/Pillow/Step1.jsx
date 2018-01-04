@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import { NavLink, withRouter } from "react-router-dom";
 import ReactCSSTransitionGroup from "react-addons-css-transition-group";
+import _ from 'lodash';
 
+//CHECKMARK STYLING(not working in css file)//
 const clicked = {
   width: "100px",
   height: "100px"
@@ -12,15 +14,17 @@ export default class Step1 extends Component {
     super();
     this.state = {
       isClicked: false,
+      pillowSize: "",
       checkMarkImg: []
     };
     this.handleClick = this.handleClick.bind(this);
     this.renderCheckMark = this.renderCheckMark.bind(this);
   }
 
-  handleClick() {
-    console.log("CLICKED");
-    this.setState({ isClicked: true, checkMarkImg: ["images/check-mark.png"] });
+  handleClick(evt) {
+    let choice = String(evt.target.src).split('/')[String(evt.target.src).split('/').length-1].split('.')[0].split('_')
+    choice = choice[choice.length-1]
+    this.setState({ isClicked: true, pillowSize: choice, checkMarkImg: ["images/check-mark.png"] });
   }
 
   renderCheckMark() {
@@ -32,6 +36,7 @@ export default class Step1 extends Component {
       );
     });
   }
+
 
   render() {
     console.log("REDERING", this.state);
@@ -63,12 +68,14 @@ export default class Step1 extends Component {
                 />
                 <ul id="childCheckMark">
                   <ReactCSSTransitionGroup {...transitionOptions}>
-                    {this.renderCheckMark()}
+                    {(this.state.pillowSize === '20x20') && this.renderCheckMark()}
                   </ReactCSSTransitionGroup>
                 </ul>
                 {/* </NavLink> */}
               </div>
             </section>
+
+
 
             <section className="col-sm-4 pillowSize">
               <header>
@@ -85,17 +92,29 @@ export default class Step1 extends Component {
               </div>
             </section>
 
+
+
             <section className="col-sm-4 pillowSize">
               <header>
                 <p className="choices">MINI SQUARE 16X16</p>
               </header>
-              <NavLink to="/step2" data-size="16x16">
+              <div id="parentImg">
+                {/*<NavLink to="/step2" data-size="16x16">*/}
                 <img
+                  onClick={this.handleClick}
                   className="pillowImages3"
                   src="images/pillow_insert_16x16.png"
                 />
-              </NavLink>
+                <ul id="childCheckMark">
+                  <ReactCSSTransitionGroup {...transitionOptions}>
+                  {(this.state.pillowSize === '16x16') && this.renderCheckMark()}
+                  </ReactCSSTransitionGroup>
+                </ul>
+                {/* </NavLink> */}
+              </div>
             </section>
+
+
           </div>
         </div>
       </div>

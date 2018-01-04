@@ -19,3 +19,13 @@ App to Root to Component and than your redux is exporting and store is creating 
 
 //I learn how to override bootstrap. Simply add another custom css rel in html
 //then on the css ,put your css code to override
+
+//HUGE LEARING FROM CSS TRANSFORM GROUP
+  1.key is important
+  2.kinda need to map and generate each li
+  3.so far seperate component failed
+  4.css is very delicate (make sure you have parent child div for ovelapping image)
+
+//Extracting img src from HTML Image Element in CLICK EVENT
+--> Simply access by evt.target.src
+-->String(evt.target.src)

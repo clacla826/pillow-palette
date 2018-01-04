@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.2",
+    "lodash": "^4.17.4",
     "nodemon": "^1.14.3",
     "path": "^0.12.7",
     "react": "^16.2.0",
