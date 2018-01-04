@@ -24,13 +24,6 @@ body {
   padding: 10px;
 }
 
-.container-fluid {
-  margin-right: auto;
-  margin-left: auto;
-  padding-left: 0px;
-  padding-right: 0px;
-}
-
 .container-fluid1 {
   background-color: #FDD536;
   height: 100px;
@@ -1068,40 +1061,6 @@ a{
   }
   }
 
-/*///////////////MEDIA QUERY IPHONE 6///////////*/
-
-@media (max-width:375px) {
-  .container-fluid3 {
-    height: 1200px;
-    background-color: #8dcffd;
-  }
-
-  .container-fluid4 {
-    height: 1220px;
-    background-color: #b7ffe6;
-  }
-
-  .container-fluid5 {
-    height: 1350px;
-    background-color: #f9a997;
-  }
-
-  .container-fluid6 {
-    height: 850px;
-    background-color: #FFF;
-  }
-  .container-fluid7 {
-    height: 200px;
-    background-color: #fdd536;
-  }
-  .container-fluid8 {
-    height: 350px;
-    background-color: #242424;
-  }
-.container-fluid9 {
-  height: 100px;
-  background-color: #4bb5ff;
-}
 
 
 /*///////////////////FOR JS//////////////
@@ -1118,24 +1077,32 @@ a{
 
 
 
+
+
+
+
+
+
+
+
+
+
 /*///////////////FOR REACT CSS/////////////*/
-.example-appear {
-  opacity: 0.01;
+
+#practice li {
+  position: relative ;
 }
 
-.example-appear.example-appear-active {
-  opacity: 1;
-  transition: opacity .5s ease-in;
+/* Starting State of Animation */
+
+.fade-enter {
+  right: 100px ;
 }
 
-
-.fade-appear {
-  opacity: 0.01;
-}
-
-.fade-appear.fade-appear-active {
-  opacity: 1;
-  transition: opacity 500ms ease-in;
+/* End State of Animation */
+.fade-enter-active {
+  right: 0px ;
+  transition: .5s ease-in all ;
 }
 
 

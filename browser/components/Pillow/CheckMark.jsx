@@ -1,18 +1,21 @@
 import React from 'react';
-import {CSSTransitionGroup} from 'react-transition-group'
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 export default function AppearCheckMarkApp () {
 
   return (
     <div >
-    <CSSTransitionGroup
-    transitionName="example"
+    <ReactCSSTransitionGroup
+    transitionName="fade"
     transitionAppear={true}
-    transitionAppearTimeout={500}
-    transitionEnter={false}
-    transitionLeave={false}>
-    <h1>Fading at Initial Mount</h1>
-  </CSSTransitionGroup>
+    transitionEnterTimeout={500}
+    transitionLeaveTimeout={500}>
+    <img
+          key="check"
+          className="checkcheck"
+          src="images/check-mark.png"
+        />
+  </ReactCSSTransitionGroup>
     </div>
   )
 }
