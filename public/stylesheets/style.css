@@ -1089,21 +1089,33 @@ a{
 
 /*///////////////FOR REACT CSS/////////////*/
 
-#practice li {
+
+#parentImg {
   position: relative ;
 }
 
-/* Starting State of Animation */
+#childCheckMark {
+  z-index: 5;
+  position: absolute;
+  top: 50%;
+  left: 43%;
+  transform: translate(-50%, -50%);
+}
 
 .fade-enter {
-  right: 100px ;
+  opacity: 0.01;
 }
 
-/* End State of Animation */
-.fade-enter-active {
-  right: 0px ;
-  transition: .5s ease-in all ;
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
 }
 
+.fade-leave {
+  opacity: 1;
+}
 
-
+.fade-leave.fade-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+}

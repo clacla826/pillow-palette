@@ -1,70 +1,172 @@
-import React, { Component } from 'react';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
-import Faker from 'faker';
-import _ from 'lodash';
+import React, { Component } from "react";
+import { NavLink, withRouter } from "react-router-dom";
+import ReactCSSTransitionGroup from "react-addons-css-transition-group";
 
 const clicked = {
   width: "100px",
   height: "100px"
 };
 
-export default class PracticeAnimations extends Component {
+export default class Step1 extends Component {
+  constructor() {
+    super();
+    this.state = {
+      isClicked: false,
+      checkMarkImg: []
+    };
+    this.handleClick = this.handleClick.bind(this);
+    this.renderCheckMark = this.renderCheckMark.bind(this);
+  }
 
-	constructor(props) {
-		super(props);
-		this.state = { quotes: [] };
-	}
+  handleClick() {
+    console.log("CLICKED");
+    this.setState({ isClicked: true, checkMarkImg: ["images/check-mark.png"] });
+  }
 
-	onAddClick() {
-		const quote = Faker.lorem.sentence();
-		this.setState({ quotes: [...this.state.quotes, quote] });
-	}
+  renderCheckMark() {
+    return this.state.checkMarkImg.map((img, index) => {
+      return (
+        <li key={img}>
+          <img style={clicked} src={img} />
+        </li>
+      );
+    });
+  }
 
-	onRemoveClick(quote) {
-		this.setState({ quotes: _.without(this.state.quotes, quote)});
-	}
+  render() {
+    console.log("REDERING", this.state);
 
-	renderQuotes() {
-		return this.state.quotes.map((item, index) => {
-			return (
-				<li>
-          <img
-          key="check"
-          style = {clicked}
-          className="checkcheck"
-          src="images/check-mark.png"
-        />
-				</li>
-			)
-		});
-	}
+    const transitionOptions = {
+      transitionName: "fade",
+      transitionEnterTimeout: 500,
+      transitionLeaveTimeout: 100
+    };
 
-	render() {
+    return (
+      <div className="container-fluid3" id="step1">
+        <div className="flexcontainer">
+          <div className="pageTitle col-sm-12">
+            <header className="titleHeader">PICK YOUR PILLOW SIZE</header>
+            <p className="subtitle">3 different sizes, 3 different fun!</p>
 
-		//The transiton name will also be used for the css class definiton
-		const transitionOptions = {
-			transitionName: 'fade',
-			transitionEnterTimeout: 500,
-			transitionLeaveTimeout: 100
-		};
+            <section className="col-sm-4 pillowSize">
+              <header>
+                <p className="choices">STANDARD SQUARE 20X20</p>
+              </header>
 
-		return (
-			<div>
+              <div id="parentImg">
+                {/*<NavLink to="/step2" data-size="20x20">*/}
+                <img
+                  onClick={this.handleClick}
+                  className="pillowImages1"
+                  src="images/pillow_insert_20x20.png"
+                />
+                <ul id="childCheckMark">
+                  <ReactCSSTransitionGroup {...transitionOptions}>
+                    {this.renderCheckMark()}
+                  </ReactCSSTransitionGroup>
+                </ul>
+                {/* </NavLink> */}
+              </div>
+            </section>
 
-			  <div id="practice" className="checkdiv">
-			  	<button onClick={this.onAddClick.bind(this)} className="button success">Add</button>
-				  	<ul>
-				  	  <ReactCSSTransitionGroup {...transitionOptions}>
-				  	    {this.renderQuotes()}
-				  	  </ReactCSSTransitionGroup>
-				  	</ul>
-			  </div>
+            <section className="col-sm-4 pillowSize">
+              <header>
+                <p className="choices">STANDARD RECTANGLE 16X20</p>
+              </header>
+              <NavLink to="/step2" data-size="16x24">
+                <img
+                  className="pillowImages2"
+                  src="images/pillow_insert_16x24.png"
+                />
+              </NavLink>
+              <div className="checkmarkk" id="checkmark1B">
+                <p>Comming Soon</p>
+              </div>
+            </section>
 
-			</div>
-		);
-	}
-
+            <section className="col-sm-4 pillowSize">
+              <header>
+                <p className="choices">MINI SQUARE 16X16</p>
+              </header>
+              <NavLink to="/step2" data-size="16x16">
+                <img
+                  className="pillowImages3"
+                  src="images/pillow_insert_16x16.png"
+                />
+              </NavLink>
+            </section>
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
 
+// import React, { Component } from 'react';
+// import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+// import Faker from 'faker';
+// import _ from 'lodash';
 
+// const clicked = {
+//   width: "100px",
+//   height: "100px"
+// };
 
+// export default class PracticeAnimations extends Component {
+
+// 	constructor(props) {
+// 		super(props);
+// 		this.state = { quotes: [] };
+// 	}
+
+// 	onAddClick() {
+// 		const quote = Faker.lorem.sentence();
+// 		this.setState({ quotes: [...this.state.quotes, quote] });
+// 	}
+
+// 	onRemoveClick(quote) {
+// 		this.setState({ quotes: _.without(this.state.quotes, quote)});
+// 	}
+
+// 	renderQuotes() {
+// 		return this.state.quotes.map((item, index) => {
+// 			return (
+// 				<li>
+//           <img
+//           key="check"
+//           style = {clicked}
+//           className="checkcheck"
+//           src="images/check-mark.png"
+//         />
+// 				</li>
+// 			)
+// 		});
+// 	}
+
+// 	render() {
+
+// 		//The transiton name will also be used for the css class definiton
+// 		const transitionOptions = {
+// 			transitionName: 'fade',
+// 			transitionEnterTimeout: 500,
+// 			transitionLeaveTimeout: 100
+// 		};
+
+// 		return (
+// 			<div>
+
+// 			  <div id="practice" className="checkdiv">
+// 			  	<button onClick={this.onAddClick.bind(this)} className="button success">Add</button>
+// 				  	<ul>
+// 				  	  <ReactCSSTransitionGroup {...transitionOptions}>
+// 				  	    {this.renderQuotes()}
+// 				  	  </ReactCSSTransitionGroup>
+// 				  	</ul>
+// 			  </div>
+
+// 			</div>
+// 		);
+// 	}
+
+// }
