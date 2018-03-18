@@ -10,3 +10,4 @@ npm install
 ```
 npm run start-dev
 ```
+And check on your http://localhost:8080
